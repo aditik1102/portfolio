@@ -16,7 +16,6 @@
   <meta property="og:url" content="https://aditik1102.github.io/portfolio/" />
   <meta property="og:title" content="Aditi Yuvraj Kadam — WordPress & Shopify Developer" />
   <meta property="og:description" content="I build the stores your customers actually check out on. 5+ years experience building custom WordPress & Shopify stores." />
-  <meta property="og:image" content="assets/images/gift-mart.jpg" />
 
   <!-- Twitter Card -->
   <meta property="twitter:card" content="summary_large_image" />
@@ -554,16 +553,6 @@
       color: var(--paper);
     }
 
-    .project-btn-preview {
-      border-color: var(--gold-deep);
-      color: var(--gold-deep);
-    }
-
-    .project-btn-preview:hover {
-      background: var(--gold-deep);
-      color: #fff;
-    }
-
     .total-row {
       display: flex;
       justify-content: space-between;
@@ -745,145 +734,6 @@
       margin-top: 16px;
     }
 
-    /* ---------- MODAL DIALOG ---------- */
-    .modal-overlay {
-      position: fixed;
-      inset: 0;
-      background: rgba(10, 9, 18, 0.85);
-      backdrop-filter: blur(8px);
-      z-index: 1000;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 20px;
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.25s ease;
-    }
-
-    .modal-overlay.active {
-      opacity: 1;
-      pointer-events: auto;
-    }
-
-    .modal-box {
-      background: var(--ink-2);
-      border: 1px solid var(--ink-border);
-      border-radius: var(--radius-lg);
-      max-width: 780px;
-      width: 100%;
-      max-height: 90vh;
-      overflow-y: auto;
-      position: relative;
-      transform: scale(0.95) translateY(10px);
-      transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-      box-shadow: 0 24px 48px rgba(0, 0, 0, 0.5);
-      color: var(--ink-text);
-    }
-
-    .modal-overlay.active .modal-box {
-      transform: scale(1) translateY(0);
-    }
-
-    .modal-close {
-      position: absolute;
-      top: 16px;
-      right: 16px;
-      width: 36px;
-      height: 36px;
-      background: rgba(255, 255, 255, 0.08);
-      border-radius: 50%;
-      color: var(--ink-text);
-      font-size: 1.2rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      z-index: 2;
-      transition: var(--transition);
-    }
-
-    .modal-close:hover {
-      background: var(--gold);
-      color: var(--ink);
-    }
-
-    .modal-image-container {
-      width: 100%;
-      height: 320px;
-      background: #000;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .modal-image-container img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: top center;
-    }
-
-    .modal-content-body {
-      padding: 28px 32px 36px;
-    }
-
-    .modal-title {
-      font-size: 1.8rem;
-      margin-bottom: 6px;
-      color: #fff;
-    }
-
-    .modal-category {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.82rem;
-      color: var(--gold);
-      margin-bottom: 16px;
-    }
-
-    .modal-desc {
-      font-size: 0.98rem;
-      line-height: 1.7;
-      color: var(--ink-muted);
-      margin-bottom: 24px;
-    }
-
-    .modal-highlights-title {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.78rem;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: var(--ink-text);
-      margin-bottom: 12px;
-    }
-
-    .modal-highlights {
-      list-style: none;
-      padding: 0;
-      margin: 0 0 28px 0;
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-    }
-
-    .modal-highlights li {
-      font-size: 0.9rem;
-      color: var(--ink-muted);
-      display: flex;
-      align-items: flex-start;
-      gap: 8px;
-    }
-
-    .modal-highlights li::before {
-      content: "✓";
-      color: var(--gold);
-      font-weight: bold;
-    }
-
-    .modal-actions {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-    }
-
     /* ---------- TOAST NOTIFICATION ---------- */
     .toast-container {
       position: fixed;
@@ -921,7 +771,7 @@
         background: #fff !important;
         color: #000 !important;
       }
-      header.hero, footer, .modal-overlay, .toast-container, .cta-row, .project-actions {
+      header.hero, footer, .toast-container, .cta-row, .project-actions {
         display: none !important;
       }
       .receipt-wrapper {
@@ -971,12 +821,6 @@
       }
       .receipt-meta-right {
         text-align: left;
-      }
-      .modal-content-body {
-        padding: 20px;
-      }
-      .modal-image-container {
-        height: 200px;
       }
     }
   </style>
@@ -1132,7 +976,7 @@
         <div class="projects-list">
 
           <!-- Project 01: The Gift Mart -->
-          <div class="project-card">
+          <a class="project-card" href="https://thegiftmart.co.in/" target="_blank" rel="noopener">
             <div class="project-left">
               <span class="project-num">01</span>
               <div class="project-info">
@@ -1149,17 +993,14 @@
               </div>
             </div>
             <div class="project-actions">
-              <button class="project-btn project-btn-preview" data-project="gift-mart">
-                🔍 Preview
-              </button>
-              <a class="project-btn project-btn-primary" href="https://thegiftmart.co.in/" target="_blank" rel="noopener">
-                Visit site &rarr;
-              </a>
+              <span class="project-btn project-btn-primary">
+                View site &rarr;
+              </span>
             </div>
-          </div>
+          </a>
 
           <!-- Project 02: Enterprise Solutions Inc -->
-          <div class="project-card">
+          <a class="project-card" href="https://www.enterprisesolutioninc.com/" target="_blank" rel="noopener">
             <div class="project-left">
               <span class="project-num">02</span>
               <div class="project-info">
@@ -1176,17 +1017,14 @@
               </div>
             </div>
             <div class="project-actions">
-              <button class="project-btn project-btn-preview" data-project="enterprise-solutions">
-                🔍 Preview
-              </button>
-              <a class="project-btn project-btn-primary" href="https://www.enterprisesolutioninc.com/" target="_blank" rel="noopener">
-                Visit site &rarr;
-              </a>
+              <span class="project-btn project-btn-primary">
+                View site &rarr;
+              </span>
             </div>
-          </div>
+          </a>
 
           <!-- Project 03: Lumina World School -->
-          <div class="project-card">
+          <a class="project-card" href="https://luminaworld.school/" target="_blank" rel="noopener">
             <div class="project-left">
               <span class="project-num">03</span>
               <div class="project-info">
@@ -1203,17 +1041,14 @@
               </div>
             </div>
             <div class="project-actions">
-              <button class="project-btn project-btn-preview" data-project="lumina-school">
-                🔍 Preview
-              </button>
-              <a class="project-btn project-btn-primary" href="https://luminaworld.school/" target="_blank" rel="noopener">
-                Visit site &rarr;
-              </a>
+              <span class="project-btn project-btn-primary">
+                View site &rarr;
+              </span>
             </div>
-          </div>
+          </a>
 
           <!-- Project 04: Dizester Herbal -->
-          <div class="project-card">
+          <a class="project-card" href="https://dizesterherbal.com/" target="_blank" rel="noopener">
             <div class="project-left">
               <span class="project-num">04</span>
               <div class="project-info">
@@ -1230,17 +1065,14 @@
               </div>
             </div>
             <div class="project-actions">
-              <button class="project-btn project-btn-preview" data-project="dizester-herbal">
-                🔍 Preview
-              </button>
-              <a class="project-btn project-btn-primary" href="https://dizesterherbal.com/" target="_blank" rel="noopener">
-                Visit site &rarr;
-              </a>
+              <span class="project-btn project-btn-primary">
+                View site &rarr;
+              </span>
             </div>
-          </div>
+          </a>
 
           <!-- Project 05: Drip Kingz Apparel -->
-          <div class="project-card">
+          <a class="project-card" href="https://dripkingzapparel.com/" target="_blank" rel="noopener">
             <div class="project-left">
               <span class="project-num">05</span>
               <div class="project-info">
@@ -1257,14 +1089,11 @@
               </div>
             </div>
             <div class="project-actions">
-              <button class="project-btn project-btn-preview" data-project="drip-kingz">
-                🔍 Preview
-              </button>
-              <a class="project-btn project-btn-primary" href="https://dripkingzapparel.com/" target="_blank" rel="noopener">
-                Visit site &rarr;
-              </a>
+              <span class="project-btn project-btn-primary">
+                View site &rarr;
+              </span>
             </div>
-          </div>
+          </a>
 
         </div>
 
@@ -1350,120 +1179,11 @@
     </div>
   </footer>
 
-  <!-- PROJECT PREVIEW MODAL -->
-  <div class="modal-overlay" id="project-modal" aria-hidden="true" role="dialog">
-    <div class="modal-box">
-      <button class="modal-close" id="modal-close" aria-label="Close modal">&times;</button>
-      
-      <div class="modal-image-container">
-        <img id="modal-img" src="" alt="Project Preview" />
-      </div>
-
-      <div class="modal-content-body">
-        <div class="modal-category" id="modal-category">Category</div>
-        <h3 class="modal-title" id="modal-title">Project Name</h3>
-        <p class="modal-desc" id="modal-desc">Project description goes here...</p>
-
-        <div class="modal-highlights-title">Key Technical Contributions:</div>
-        <ul class="modal-highlights" id="modal-highlights">
-          <!-- Rendered dynamically -->
-        </ul>
-
-        <div class="modal-actions">
-          <a class="btn btn-primary" id="modal-link" href="#" target="_blank" rel="noopener">
-            Visit Live Site ↗
-          </a>
-          <button class="btn btn-ghost" onclick="document.getElementById('project-modal').classList.remove('active'); document.body.style.overflow='';" >
-            Close Preview
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>
-
   <!-- TOAST CONTAINER -->
   <div class="toast-container" id="toast-container"></div>
 
   <!-- Embedded JavaScript Engine -->
   <script>
-    const projectsData = {
-      "gift-mart": {
-        number: "01",
-        title: "The Gift Mart",
-        category: "Gifting & Lifestyle E-Commerce",
-        domain: "https://thegiftmart.co.in/",
-        image: "assets/images/gift-mart.jpg",
-        tags: ["Shopify", "Liquid", "Custom Sections", "JavaScript", "SEO Optimization"],
-        description: "Full-scale Shopify store custom build tailored for corporate & personal gift hampers. Engineered smooth cart drawer, custom product add-ons, bundled pricing logic, and ultra-fast page speeds.",
-        highlights: [
-          "Custom Shopify Liquid section architecture for modular product pages",
-          "Dynamic gift box customizer allowing customers to build personalized hampers",
-          "Optimized Core Web Vitals resulting in 95+ Mobile PageSpeed score",
-          "Integrated seamless Indian payment gateways & pin-code serviceability checker"
-        ]
-      },
-      "enterprise-solutions": {
-        number: "02",
-        title: "Enterprise Solutions Inc",
-        category: "IT Staffing & Consulting Firm",
-        domain: "https://www.enterprisesolutioninc.com/",
-        image: "assets/images/enterprise-solutions.jpg",
-        tags: ["WordPress", "PHP", "Custom Theme", "Elementor", "Job Board Integration"],
-        description: "Corporate website build for a leading global IT staffing firm. Designed to handle high candidate traffic, clear service offerings, corporate client showcases, and automated career application workflows.",
-        highlights: [
-          "Custom WordPress theme architecture built for enterprise security and speed",
-          "Interactive candidate job portal & resume submission workflow",
-          "Multilingual capabilities and location-based routing for US & international clients",
-          "Schema structured data integration for improved Google Jobs ranking"
-        ]
-      },
-      "lumina-school": {
-        number: "03",
-        title: "Lumina World School",
-        category: "Education & Institution Site",
-        domain: "https://luminaworld.school/",
-        image: "assets/images/lumina-school.jpg",
-        tags: ["WordPress", "Custom CSS3", "Academic Portal", "Formidable Forms"],
-        description: "Comprehensive institutional website for Lumina World School. Features vibrant curriculum landing pages, virtual campus tour galleries, interactive admission inquiry forms, and parent communication portal.",
-        highlights: [
-          "Mobile-first responsive design catered for prospective parents and students",
-          "Secure online admission application system with file uploads & notification routing",
-          "Event calendar & announcements noticeboard for active academic updates",
-          "Accessibility AAA compliant color contrast and keyboard navigation"
-        ]
-      },
-      "dizester-herbal": {
-        number: "04",
-        title: "Dizester Herbal",
-        category: "Herbal Wellness Products",
-        domain: "https://dizesterherbal.com/",
-        image: "assets/images/dizester-herbal.jpg",
-        tags: ["Shopify", "WooCommerce / WP", "Botanical UX", "Custom CSS", "Speed Fixes"],
-        description: "E-Commerce portal for natural herbal health & digestive remedies. Focused on trust-building visual design, ingredient breakdowns, customer reviews, and high-converting product pages.",
-        highlights: [
-          "Custom product ingredient modal display for medical transparency",
-          "Subscription checkout options for recurring health supplies",
-          "Optimized image delivery pipeline reducing page load to under 1.2 seconds",
-          "Integrated customer review widgets & trust badge carousels"
-        ]
-      },
-      "drip-kingz": {
-        number: "05",
-        title: "Drip Kingz Apparel",
-        category: "Streetwear Apparel Store",
-        domain: "https://dripkingzapparel.com/",
-        image: "assets/images/drip-kingz.jpg",
-        tags: ["Shopify", "Online Store 2.0", "Custom CSS Animations", "AJAX Cart"],
-        description: "High-energy streetwear e-commerce brand experience. Features dark moody aesthetic, interactive size guides, AJAX instant cart drawer, lookbook showcase, and inventory countdown timers.",
-        highlights: [
-          "Custom Shopify 2.0 theme built from scratch with neon dark UI components",
-          "Slide-out AJAX cart with real-time free shipping threshold progress bar",
-          "Interactive Lookbook gallery with instant product hotspot tagging",
-          "Integrated Instagram shop feed and social proof widgets"
-        ]
-      }
-    };
-
     document.addEventListener("DOMContentLoaded", () => {
       // 1. Set Dynamic Receipt Timestamp
       const dateEl = document.getElementById("receipt-date");
@@ -1473,72 +1193,7 @@
         dateEl.textContent = now.toLocaleDateString('en-US', options).toUpperCase();
       }
 
-      // 2. Setup Project Preview Modal Listeners
-      const modalOverlay = document.getElementById("project-modal");
-      const modalClose = document.getElementById("modal-close");
-      const modalImg = document.getElementById("modal-img");
-      const modalTitle = document.getElementById("modal-title");
-      const modalCategory = document.getElementById("modal-category");
-      const modalDesc = document.getElementById("modal-desc");
-      const modalHighlights = document.getElementById("modal-highlights");
-      const modalLink = document.getElementById("modal-link");
-
-      const previewButtons = document.querySelectorAll("[data-project]");
-
-      previewButtons.forEach(button => {
-        button.addEventListener("click", (e) => {
-          e.preventDefault();
-          const projectKey = button.getAttribute("data-project");
-          const data = projectsData[projectKey];
-
-          if (data) {
-            modalImg.src = data.image;
-            modalImg.alt = data.title;
-            modalTitle.textContent = `${data.number}. ${data.title}`;
-            modalCategory.textContent = data.category;
-            modalDesc.textContent = data.description;
-            modalLink.href = data.domain;
-
-            // Render highlights
-            modalHighlights.innerHTML = "";
-            data.highlights.forEach(item => {
-              const li = document.createElement("li");
-              li.textContent = item;
-              modalHighlights.appendChild(li);
-            });
-
-            // Open modal
-            modalOverlay.classList.add("active");
-            document.body.style.overflow = "hidden";
-          }
-        });
-      });
-
-      // Close Modal
-      if (modalClose) {
-        modalClose.addEventListener("click", closeModal);
-      }
-
-      if (modalOverlay) {
-        modalOverlay.addEventListener("click", (e) => {
-          if (e.target === modalOverlay) closeModal();
-        });
-      }
-
-      document.addEventListener("keydown", (e) => {
-        if (e.key === "Escape" && modalOverlay && modalOverlay.classList.contains("active")) {
-          closeModal();
-        }
-      });
-
-      function closeModal() {
-        if (modalOverlay) {
-          modalOverlay.classList.remove("active");
-          document.body.style.overflow = "";
-        }
-      }
-
-      // 3. Print Receipt Functionality
+      // 2. Print Receipt Functionality
       const printBtn = document.getElementById("print-receipt-btn");
       if (printBtn) {
         printBtn.addEventListener("click", (e) => {
@@ -1547,7 +1202,7 @@
         });
       }
 
-      // 4. Click to Copy Contacts with Toast Notification
+      // 3. Click to Copy Contacts with Toast Notification
       const copyButtons = document.querySelectorAll("[data-copy]");
       copyButtons.forEach(btn => {
         btn.addEventListener("click", (e) => {
