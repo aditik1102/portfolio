@@ -13,7 +13,7 @@
 
   <!-- Open Graph / Facebook / WhatsApp -->
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://aditi-kadam.github.io/portfolio/" />
+  <meta property="og:url" content="https://aditik1102.github.io/portfolio/" />
   <meta property="og:title" content="Aditi Yuvraj Kadam — WordPress & Shopify Developer" />
   <meta property="og:description" content="I build the stores your customers actually check out on. 5+ years experience building custom WordPress & Shopify stores." />
   <meta property="og:image" content="assets/images/gift-mart.jpg" />
@@ -31,7 +31,957 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
   
-  <!-- CSS Stylesheet -->
+  <style>
+    /* ==========================================================================
+       Aditi Yuvraj Kadam — Portfolio Stylesheet (Self-Contained & Production-Ready)
+       Theme: E-Commerce Receipt & Modern Dark Ink Design System
+       ========================================================================== */
+
+    :root {
+      /* Color Tokens */
+      --ink: #11101c;
+      --ink-2: #181628;
+      --ink-card: #1f1c35;
+      --ink-text: #ece7f5;
+      --ink-muted: #958eb7;
+      --ink-border: #2d2948;
+      
+      --paper: #f5eedc;
+      --paper-2: #ebdcb9;
+      --paper-line: #d8cbab;
+      --paper-text: #211c12;
+      --paper-muted: #6b6248;
+      
+      --gold: #d3a03b;
+      --gold-hover: #e6b146;
+      --gold-deep: #9d701e;
+      --gold-glow: rgba(211, 160, 59, 0.25);
+      
+      --teal: #2f695e;
+      --teal-light: #e3f2ef;
+      --teal-glow: rgba(47, 105, 94, 0.2);
+      
+      --green-online: #22c55e;
+      --radius: 4px;
+      --radius-lg: 12px;
+      --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.12);
+      --shadow-lg: 0 16px 36px rgba(0, 0, 0, 0.25);
+      --transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    /* ---------- RESET & BASE ---------- */
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+    }
+
+    body {
+      margin: 0;
+      background-color: var(--ink);
+      color: var(--ink-text);
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      line-height: 1.5;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Fraunces', Georgia, serif;
+      margin: 0;
+      font-weight: 600;
+      color: inherit;
+    }
+
+    p {
+      margin: 0;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      font-family: inherit;
+      cursor: pointer;
+      border: none;
+      background: none;
+      padding: 0;
+    }
+
+    ::selection {
+      background: var(--gold);
+      color: var(--ink);
+    }
+
+    .wrap {
+      max-width: 920px;
+      margin: 0 auto;
+      padding: 0 28px;
+    }
+
+    .mono {
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    /* Accessibility Focus */
+    a:focus-visible, button:focus-visible {
+      outline: 2px solid var(--gold);
+      outline-offset: 3px;
+    }
+
+    /* ---------- EYEBROW BADGE ---------- */
+    .eyebrow {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.74rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6em;
+      font-weight: 500;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 18px;
+      height: 1px;
+      background: var(--gold);
+      display: inline-block;
+    }
+
+    .status-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 14px;
+      background: rgba(34, 197, 94, 0.08);
+      border: 1px solid rgba(34, 197, 94, 0.25);
+      border-radius: 50px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem;
+      color: #4ade80;
+      margin-bottom: 24px;
+    }
+
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      background-color: var(--green-online);
+      border-radius: 50%;
+      box-shadow: 0 0 10px var(--green-online);
+      animation: pulse-green 2s infinite;
+    }
+
+    @keyframes pulse-green {
+      0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7); }
+      70% { transform: scale(1); box-shadow: 0 0 0 8px rgba(34, 197, 94, 0); }
+      100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); }
+    }
+
+    /* ---------- BUTTONS ---------- */
+    .btn {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.82rem;
+      letter-spacing: 0.03em;
+      text-decoration: none;
+      padding: 12px 20px;
+      border-radius: var(--radius);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transition: var(--transition);
+      font-weight: 500;
+      line-height: 1;
+    }
+
+    .btn-primary {
+      background: var(--gold);
+      color: var(--ink);
+      font-weight: 600;
+      box-shadow: 0 4px 14px var(--gold-glow);
+    }
+
+    .btn-primary:hover {
+      background: var(--gold-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(211, 160, 59, 0.4);
+    }
+
+    .btn-ghost {
+      border: 1px solid var(--ink-border);
+      color: var(--ink-text);
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    .btn-ghost:hover {
+      border-color: var(--gold);
+      color: var(--gold);
+      transform: translateY(-2px);
+      background: rgba(211, 160, 59, 0.05);
+    }
+
+    /* ---------- HERO HEADER ---------- */
+    header.hero {
+      padding: 88px 0 80px;
+      background:
+        radial-gradient(ellipse at 15% 0%, rgba(211, 160, 59, 0.16), transparent 60%),
+        radial-gradient(ellipse at 85% 100%, rgba(60, 107, 98, 0.15), transparent 50%),
+        var(--ink);
+      border-bottom: 1px solid var(--ink-border);
+      position: relative;
+      overflow: hidden;
+    }
+
+    header.hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image: repeating-linear-gradient(180deg, transparent, transparent 27px, rgba(255, 255, 255, 0.015) 28px);
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.4rem, 5.5vw, 3.8rem);
+      line-height: 1.08;
+      letter-spacing: -0.015em;
+      max-width: 14ch;
+    }
+
+    .hero h1 em {
+      font-style: italic;
+      color: var(--gold);
+      font-weight: 500;
+      background: linear-gradient(135deg, #f5d78e 0%, var(--gold) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero .sub {
+      margin-top: 24px;
+      max-width: 48ch;
+      font-size: 1.08rem;
+      line-height: 1.7;
+      color: var(--ink-muted);
+    }
+
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 36px;
+    }
+
+    .hero-meta {
+      margin-top: 56px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 24px;
+      padding-top: 32px;
+      border-top: 1px solid rgba(255, 255, 255, 0.07);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.78rem;
+      color: var(--ink-muted);
+    }
+
+    .hero-meta-item strong {
+      display: block;
+      font-size: 1.3rem;
+      color: var(--gold);
+      font-family: 'Fraunces', serif;
+      font-weight: 600;
+      line-height: 1.2;
+      margin-bottom: 2px;
+    }
+
+    .hero-meta-item span {
+      font-size: 0.76rem;
+      color: var(--ink-muted);
+    }
+
+    /* ---------- RECEIPT MAIN CONTAINER ---------- */
+    .receipt-wrapper {
+      background: var(--paper);
+      color: var(--paper-text);
+      position: relative;
+      box-shadow: var(--shadow-lg);
+    }
+
+    /* Serrated Receipt Edges */
+    .receipt-wrapper::before,
+    .receipt-wrapper::after {
+      content: "";
+      display: block;
+      height: 16px;
+      background-image: radial-gradient(circle at 12px 8px, var(--ink) 7px, transparent 8px);
+      background-size: 24px 16px;
+      background-repeat: repeat-x;
+    }
+
+    .receipt-wrapper::before {
+      background-position: 0 -8px;
+    }
+
+    .receipt-wrapper::after {
+      background-position: 0 8px;
+    }
+
+    /* Receipt Header Meta Bar */
+    .receipt-header-meta {
+      padding: 32px 0 20px;
+      border-bottom: 2px solid var(--paper-text);
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 16px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.76rem;
+      color: var(--paper-muted);
+    }
+
+    .receipt-logo-title {
+      font-family: 'Fraunces', serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--paper-text);
+      letter-spacing: -0.02em;
+    }
+
+    .receipt-meta-right {
+      text-align: right;
+      line-height: 1.6;
+    }
+
+    .section {
+      padding: 52px 0;
+      border-bottom: 1px dashed var(--paper-line);
+    }
+
+    .section:last-of-type {
+      border-bottom: none;
+    }
+
+    .section .eyebrow {
+      color: var(--gold-deep);
+      margin-bottom: 16px;
+    }
+
+    .section .eyebrow::before {
+      background: var(--gold-deep);
+    }
+
+    .section h2 {
+      font-size: clamp(1.5rem, 3.2vw, 2.1rem);
+      margin-bottom: 28px;
+      color: var(--paper-text);
+    }
+
+    /* Line Items (Services) */
+    .line-items {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .line-item {
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--paper-line);
+      transition: var(--transition);
+    }
+
+    .line-item:last-child {
+      border-bottom: none;
+    }
+
+    .line-item:hover {
+      padding-left: 8px;
+      background: rgba(0, 0, 0, 0.015);
+    }
+
+    .li-name {
+      font-weight: 600;
+      font-size: 0.98rem;
+      white-space: nowrap;
+    }
+
+    .li-desc {
+      font-size: 0.82rem;
+      color: var(--paper-muted);
+      font-weight: 400;
+    }
+
+    .li-leader {
+      flex: 1;
+      border-bottom: 1px dotted var(--paper-muted);
+      height: 0;
+      transform: translateY(-4px);
+      opacity: 0.6;
+    }
+
+    .li-val {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.8rem;
+      color: var(--gold-deep);
+      font-weight: 700;
+      white-space: nowrap;
+      letter-spacing: 0.02em;
+      background: rgba(157, 112, 30, 0.08);
+      padding: 4px 8px;
+      border-radius: var(--radius);
+    }
+
+    /* ---------- PROJECTS SHOWCASE ---------- */
+    .projects-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .project-card {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      padding: 24px 0;
+      border-bottom: 1px solid var(--paper-line);
+      text-decoration: none;
+      color: inherit;
+      transition: var(--transition);
+      position: relative;
+    }
+
+    .project-card:last-child {
+      border-bottom: none;
+    }
+
+    .project-card:hover {
+      transform: translateX(4px);
+    }
+
+    .project-left {
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+    }
+
+    .project-num {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.8rem;
+      color: var(--gold-deep);
+      font-weight: 700;
+      padding-top: 4px;
+    }
+
+    .project-info {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .project-title {
+      font-family: 'Fraunces', serif;
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--paper-text);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .project-tag {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.78rem;
+      color: var(--teal);
+      font-weight: 500;
+    }
+
+    .project-tech-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 4px;
+    }
+
+    .tech-badge {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.7rem;
+      padding: 2px 7px;
+      background: rgba(33, 28, 18, 0.06);
+      border-radius: 3px;
+      color: var(--paper-muted);
+    }
+
+    .project-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .project-btn {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.78rem;
+      padding: 9px 16px;
+      border: 1px solid var(--paper-text);
+      border-radius: var(--radius);
+      white-space: nowrap;
+      transition: var(--transition);
+      background: transparent;
+      color: var(--paper-text);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-weight: 500;
+    }
+
+    .project-btn:hover,
+    .project-card:hover .project-btn-primary {
+      background: var(--paper-text);
+      color: var(--paper);
+    }
+
+    .project-btn-preview {
+      border-color: var(--gold-deep);
+      color: var(--gold-deep);
+    }
+
+    .project-btn-preview:hover {
+      background: var(--gold-deep);
+      color: #fff;
+    }
+
+    .total-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 32px;
+      padding-top: 20px;
+      border-top: 2px solid var(--paper-text);
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .total-row .t-label {
+      font-size: 0.85rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    .total-row .t-val {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--gold-deep);
+    }
+
+    /* ---------- ABOUT SECTION ---------- */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 28px;
+    }
+
+    .about-text {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: #2c2517;
+    }
+
+    .skills-cloud {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .skill-chip {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.78rem;
+      padding: 7px 14px;
+      background: #e8ded0;
+      border: 1px solid var(--paper-line);
+      border-radius: 20px;
+      color: var(--paper-text);
+      font-weight: 500;
+    }
+
+    /* ---------- FOOTER / CONTACT ---------- */
+    footer {
+      background: var(--ink);
+      padding: 88px 0 48px;
+      text-align: center;
+      position: relative;
+    }
+
+    footer .eyebrow {
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+
+    footer .eyebrow::before {
+      display: none;
+    }
+
+    footer h2 {
+      font-size: clamp(1.9rem, 4.2vw, 2.8rem);
+      max-width: 18ch;
+      margin: 0 auto;
+      line-height: 1.18;
+      color: var(--ink-text);
+    }
+
+    footer h2 em {
+      font-style: italic;
+      color: var(--gold);
+      font-weight: 500;
+    }
+
+    .contact-row {
+      margin-top: 48px;
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+
+    .contact-card {
+      background: var(--ink-card);
+      border: 1px solid var(--ink-border);
+      padding: 20px 28px;
+      border-radius: var(--radius-lg);
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      align-items: center;
+      text-decoration: none;
+      color: var(--ink-text);
+      transition: var(--transition);
+      min-width: 220px;
+    }
+
+    .contact-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--gold);
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.3);
+    }
+
+    .contact-card .c-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--ink-muted);
+    }
+
+    .contact-card .c-val {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--ink-text);
+    }
+
+    .contact-card:hover .c-val {
+      color: var(--gold);
+    }
+
+    .contact-card .c-action {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.72rem;
+      color: var(--gold);
+      margin-top: 4px;
+    }
+
+    /* Barcode */
+    .barcode-wrapper {
+      margin: 64px auto 24px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .barcode {
+      width: 240px;
+      height: 48px;
+      background: repeating-linear-gradient(
+        90deg,
+        var(--ink-text) 0 2px,
+        transparent 2px 4px,
+        var(--ink-text) 4px 7px,
+        transparent 7px 9px,
+        var(--ink-text) 9px 10px,
+        transparent 10px 14px,
+        var(--ink-text) 14px 18px,
+        transparent 18px 20px
+      );
+      opacity: 0.8;
+      border-radius: 2px;
+    }
+
+    .barcode-text {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.72rem;
+      color: var(--ink-muted);
+      letter-spacing: 0.2em;
+    }
+
+    .footer-fine {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.7rem;
+      color: var(--ink-muted);
+      letter-spacing: 0.08em;
+      margin-top: 16px;
+    }
+
+    /* ---------- MODAL DIALOG ---------- */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(10, 9, 18, 0.85);
+      backdrop-filter: blur(8px);
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.25s ease;
+    }
+
+    .modal-overlay.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .modal-box {
+      background: var(--ink-2);
+      border: 1px solid var(--ink-border);
+      border-radius: var(--radius-lg);
+      max-width: 780px;
+      width: 100%;
+      max-height: 90vh;
+      overflow-y: auto;
+      position: relative;
+      transform: scale(0.95) translateY(10px);
+      transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      box-shadow: 0 24px 48px rgba(0, 0, 0, 0.5);
+      color: var(--ink-text);
+    }
+
+    .modal-overlay.active .modal-box {
+      transform: scale(1) translateY(0);
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      width: 36px;
+      height: 36px;
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 50%;
+      color: var(--ink-text);
+      font-size: 1.2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 2;
+      transition: var(--transition);
+    }
+
+    .modal-close:hover {
+      background: var(--gold);
+      color: var(--ink);
+    }
+
+    .modal-image-container {
+      width: 100%;
+      height: 320px;
+      background: #000;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .modal-image-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+    }
+
+    .modal-content-body {
+      padding: 28px 32px 36px;
+    }
+
+    .modal-title {
+      font-size: 1.8rem;
+      margin-bottom: 6px;
+      color: #fff;
+    }
+
+    .modal-category {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.82rem;
+      color: var(--gold);
+      margin-bottom: 16px;
+    }
+
+    .modal-desc {
+      font-size: 0.98rem;
+      line-height: 1.7;
+      color: var(--ink-muted);
+      margin-bottom: 24px;
+    }
+
+    .modal-highlights-title {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--ink-text);
+      margin-bottom: 12px;
+    }
+
+    .modal-highlights {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 28px 0;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .modal-highlights li {
+      font-size: 0.9rem;
+      color: var(--ink-muted);
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+    }
+
+    .modal-highlights li::before {
+      content: "✓";
+      color: var(--gold);
+      font-weight: bold;
+    }
+
+    .modal-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    /* ---------- TOAST NOTIFICATION ---------- */
+    .toast-container {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      z-index: 2000;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .toast {
+      background: var(--ink-2);
+      border: 1px solid var(--gold);
+      color: var(--ink-text);
+      padding: 12px 20px;
+      border-radius: var(--radius);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.8rem;
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.4);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      animation: slide-in 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    @keyframes slide-in {
+      from { transform: translateY(100%); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    /* ---------- PRINT STYLES ---------- */
+    @media print {
+      body {
+        background: #fff !important;
+        color: #000 !important;
+      }
+      header.hero, footer, .modal-overlay, .toast-container, .cta-row, .project-actions {
+        display: none !important;
+      }
+      .receipt-wrapper {
+        background: #fff !important;
+        box-shadow: none !important;
+      }
+      .receipt-wrapper::before, .receipt-wrapper::after {
+        display: none !important;
+      }
+      .wrap {
+        max-width: 100% !important;
+        padding: 0 !important;
+      }
+      .section {
+        padding: 20px 0 !important;
+        page-break-inside: avoid;
+      }
+    }
+
+    /* ---------- RESPONSIVE MEDIA QUERIES ---------- */
+    @media (max-width: 768px) {
+      .wrap {
+        padding: 0 20px;
+      }
+      header.hero {
+        padding: 64px 0 56px;
+      }
+      .hero-meta {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 18px;
+      }
+      .project-card {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+      }
+      .project-actions {
+        width: 100%;
+        justify-content: flex-start;
+      }
+      .li-name {
+        font-size: 0.9rem;
+      }
+      .receipt-header-meta {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .receipt-meta-right {
+        text-align: left;
+      }
+      .modal-content-body {
+        padding: 20px;
+      }
+      .modal-image-container {
+        height: 200px;
+      }
+    }
+  </style>
+
+  <!-- External Stylesheet Fallback -->
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
@@ -434,7 +1384,202 @@
   <!-- TOAST CONTAINER -->
   <div class="toast-container" id="toast-container"></div>
 
-  <!-- JavaScript -->
-  <script src="js/script.js"></script>
+  <!-- Embedded JavaScript Engine -->
+  <script>
+    const projectsData = {
+      "gift-mart": {
+        number: "01",
+        title: "The Gift Mart",
+        category: "Gifting & Lifestyle E-Commerce",
+        domain: "https://thegiftmart.co.in/",
+        image: "assets/images/gift-mart.jpg",
+        tags: ["Shopify", "Liquid", "Custom Sections", "JavaScript", "SEO Optimization"],
+        description: "Full-scale Shopify store custom build tailored for corporate & personal gift hampers. Engineered smooth cart drawer, custom product add-ons, bundled pricing logic, and ultra-fast page speeds.",
+        highlights: [
+          "Custom Shopify Liquid section architecture for modular product pages",
+          "Dynamic gift box customizer allowing customers to build personalized hampers",
+          "Optimized Core Web Vitals resulting in 95+ Mobile PageSpeed score",
+          "Integrated seamless Indian payment gateways & pin-code serviceability checker"
+        ]
+      },
+      "enterprise-solutions": {
+        number: "02",
+        title: "Enterprise Solutions Inc",
+        category: "IT Staffing & Consulting Firm",
+        domain: "https://www.enterprisesolutioninc.com/",
+        image: "assets/images/enterprise-solutions.jpg",
+        tags: ["WordPress", "PHP", "Custom Theme", "Elementor", "Job Board Integration"],
+        description: "Corporate website build for a leading global IT staffing firm. Designed to handle high candidate traffic, clear service offerings, corporate client showcases, and automated career application workflows.",
+        highlights: [
+          "Custom WordPress theme architecture built for enterprise security and speed",
+          "Interactive candidate job portal & resume submission workflow",
+          "Multilingual capabilities and location-based routing for US & international clients",
+          "Schema structured data integration for improved Google Jobs ranking"
+        ]
+      },
+      "lumina-school": {
+        number: "03",
+        title: "Lumina World School",
+        category: "Education & Institution Site",
+        domain: "https://luminaworld.school/",
+        image: "assets/images/lumina-school.jpg",
+        tags: ["WordPress", "Custom CSS3", "Academic Portal", "Formidable Forms"],
+        description: "Comprehensive institutional website for Lumina World School. Features vibrant curriculum landing pages, virtual campus tour galleries, interactive admission inquiry forms, and parent communication portal.",
+        highlights: [
+          "Mobile-first responsive design catered for prospective parents and students",
+          "Secure online admission application system with file uploads & notification routing",
+          "Event calendar & announcements noticeboard for active academic updates",
+          "Accessibility AAA compliant color contrast and keyboard navigation"
+        ]
+      },
+      "dizester-herbal": {
+        number: "04",
+        title: "Dizester Herbal",
+        category: "Herbal Wellness Products",
+        domain: "https://dizesterherbal.com/",
+        image: "assets/images/dizester-herbal.jpg",
+        tags: ["Shopify", "WooCommerce / WP", "Botanical UX", "Custom CSS", "Speed Fixes"],
+        description: "E-Commerce portal for natural herbal health & digestive remedies. Focused on trust-building visual design, ingredient breakdowns, customer reviews, and high-converting product pages.",
+        highlights: [
+          "Custom product ingredient modal display for medical transparency",
+          "Subscription checkout options for recurring health supplies",
+          "Optimized image delivery pipeline reducing page load to under 1.2 seconds",
+          "Integrated customer review widgets & trust badge carousels"
+        ]
+      },
+      "drip-kingz": {
+        number: "05",
+        title: "Drip Kingz Apparel",
+        category: "Streetwear Apparel Store",
+        domain: "https://dripkingzapparel.com/",
+        image: "assets/images/drip-kingz.jpg",
+        tags: ["Shopify", "Online Store 2.0", "Custom CSS Animations", "AJAX Cart"],
+        description: "High-energy streetwear e-commerce brand experience. Features dark moody aesthetic, interactive size guides, AJAX instant cart drawer, lookbook showcase, and inventory countdown timers.",
+        highlights: [
+          "Custom Shopify 2.0 theme built from scratch with neon dark UI components",
+          "Slide-out AJAX cart with real-time free shipping threshold progress bar",
+          "Interactive Lookbook gallery with instant product hotspot tagging",
+          "Integrated Instagram shop feed and social proof widgets"
+        ]
+      }
+    };
+
+    document.addEventListener("DOMContentLoaded", () => {
+      // 1. Set Dynamic Receipt Timestamp
+      const dateEl = document.getElementById("receipt-date");
+      if (dateEl) {
+        const now = new Date();
+        const options = { year: 'numeric', month: 'short', day: '2-digit' };
+        dateEl.textContent = now.toLocaleDateString('en-US', options).toUpperCase();
+      }
+
+      // 2. Setup Project Preview Modal Listeners
+      const modalOverlay = document.getElementById("project-modal");
+      const modalClose = document.getElementById("modal-close");
+      const modalImg = document.getElementById("modal-img");
+      const modalTitle = document.getElementById("modal-title");
+      const modalCategory = document.getElementById("modal-category");
+      const modalDesc = document.getElementById("modal-desc");
+      const modalHighlights = document.getElementById("modal-highlights");
+      const modalLink = document.getElementById("modal-link");
+
+      const previewButtons = document.querySelectorAll("[data-project]");
+
+      previewButtons.forEach(button => {
+        button.addEventListener("click", (e) => {
+          e.preventDefault();
+          const projectKey = button.getAttribute("data-project");
+          const data = projectsData[projectKey];
+
+          if (data) {
+            modalImg.src = data.image;
+            modalImg.alt = data.title;
+            modalTitle.textContent = `${data.number}. ${data.title}`;
+            modalCategory.textContent = data.category;
+            modalDesc.textContent = data.description;
+            modalLink.href = data.domain;
+
+            // Render highlights
+            modalHighlights.innerHTML = "";
+            data.highlights.forEach(item => {
+              const li = document.createElement("li");
+              li.textContent = item;
+              modalHighlights.appendChild(li);
+            });
+
+            // Open modal
+            modalOverlay.classList.add("active");
+            document.body.style.overflow = "hidden";
+          }
+        });
+      });
+
+      // Close Modal
+      if (modalClose) {
+        modalClose.addEventListener("click", closeModal);
+      }
+
+      if (modalOverlay) {
+        modalOverlay.addEventListener("click", (e) => {
+          if (e.target === modalOverlay) closeModal();
+        });
+      }
+
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && modalOverlay && modalOverlay.classList.contains("active")) {
+          closeModal();
+        }
+      });
+
+      function closeModal() {
+        if (modalOverlay) {
+          modalOverlay.classList.remove("active");
+          document.body.style.overflow = "";
+        }
+      }
+
+      // 3. Print Receipt Functionality
+      const printBtn = document.getElementById("print-receipt-btn");
+      if (printBtn) {
+        printBtn.addEventListener("click", (e) => {
+          e.preventDefault();
+          window.print();
+        });
+      }
+
+      // 4. Click to Copy Contacts with Toast Notification
+      const copyButtons = document.querySelectorAll("[data-copy]");
+      copyButtons.forEach(btn => {
+        btn.addEventListener("click", (e) => {
+          e.preventDefault();
+          const textToCopy = btn.getAttribute("data-copy");
+          const label = btn.getAttribute("data-label") || "Text";
+
+          navigator.clipboard.writeText(textToCopy).then(() => {
+            showToast(`✓ Copied ${label} to clipboard!`);
+          }).catch(err => {
+            showToast(`Copied: ${textToCopy}`);
+          });
+        });
+      });
+
+      function showToast(message) {
+        const container = document.getElementById("toast-container");
+        if (!container) return;
+
+        const toast = document.createElement("div");
+        toast.className = "toast";
+        toast.innerHTML = `<span>${message}</span>`;
+        container.appendChild(toast);
+
+        setTimeout(() => {
+          toast.style.opacity = "0";
+          toast.style.transform = "translateY(20px)";
+          toast.style.transition = "all 0.3s ease";
+          setTimeout(() => toast.remove(), 300);
+        }, 2800);
+      }
+    });
+  </script>
 </body>
 </html>
